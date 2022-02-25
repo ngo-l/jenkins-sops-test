@@ -1,5 +1,6 @@
 properties([pipelineTriggers([githubPush()])])
 def label = "worker-${UUID.randomUUID().toString()}"
+//testing
 
 podTemplate(label: label, containers: [
   containerTemplate(name: 'buildah', image: 'ngol/buildah:v1', command: 'cat', imagePullPolicy: 'Always' , privileged: true, ttyEnabled: true),
