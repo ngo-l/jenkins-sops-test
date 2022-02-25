@@ -15,7 +15,7 @@ volumes: [
        git url: "https://github.com/ngo-l/jenkins-sops-test" ,branch: 'master'
        env.GIT = "git@github.com:ngo-l/jenkins-sops-test.git"
        env.ENCRYPT = "staging/secrets-enc.env"
-       env.DECRYPT = "/test/secrets.env"
+       env.DECRYPT = "secrets.env"
 
 
   stage('Git source') {
