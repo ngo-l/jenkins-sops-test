@@ -36,7 +36,7 @@ volumes: [
         container('sops') {
           sh "sops -v" 
           sh 'pwd && ls ./'        
-           withCredentials([file(credentialsId: 'sops-cicd-key', variable: 'FILE')]) {
+           withCredentials([file(credentialsId: 'jenkins-sops-pvt-key', variable: 'FILE')]) {
               sh 'gpg --import $FILE'    
               sh "gpg --list-keys"
               sh "sops -d ${ENCRYPT} > ${DECRYPT}"                
