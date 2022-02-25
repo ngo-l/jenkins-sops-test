@@ -1,4 +1,4 @@
-//properties([pipelineTriggers([githubPush()])])
+properties([pipelineTriggers([githubPush()])])
 def label = "worker-${UUID.randomUUID().toString()}"
 
 podTemplate(label: label, containers: [
